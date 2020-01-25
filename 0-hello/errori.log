@@ -1,0 +1,20 @@
+INFO:root:Our first message.
+INFO 2020-01-25 10:56:36,125 - Our first message.
+INFO 2020-01-25 11:17:09,552 - Our first message.
+INFO 2020-01-25 11:17:09,553 - quadratic_formula (3, 2, 16)
+DEBUG 2020-01-25 11:17:09,553 - #Calcolo discriminate
+DEBUG 2020-01-25 11:17:09,553 - #Calcolo delle due radici
+INFO 2020-01-25 11:17:36,369 - Our first message.
+INFO 2020-01-25 11:17:36,369 - quadratic_formula (3, 2, 16)
+DEBUG 2020-01-25 11:17:36,369 - #Calcolo discriminate
+DEBUG 2020-01-25 11:17:36,369 - #Calcolo delle due radici
+INFO 2020-01-25 11:18:20,149 - Our first message.
+INFO 2020-01-25 11:18:20,149 - quadratic_formula (1, 0, -4)
+DEBUG 2020-01-25 11:18:20,149 - #Calcolo discriminate
+DEBUG 2020-01-25 11:18:20,149 - #Calcolo delle due radici
+DEBUG 2020-01-25 11:18:20,207 - #Ritorno le due radici come tuple
+INFO 2020-01-25 11:18:37,019 - Our first message.
+INFO 2020-01-25 11:18:37,019 - quadratic_formula (1, 0, -4)
+DEBUG 2020-01-25 11:18:37,019 - #Calcolo discriminate
+DEBUG 2020-01-25 11:18:37,019 - #Calcolo delle due radici
+DEBUG 2020-01-25 11:18:37,019 - #Ritorno le due radici come tuple
