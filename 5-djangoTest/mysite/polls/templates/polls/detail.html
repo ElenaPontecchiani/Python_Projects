@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <title>Detail</title>
 </head>
+<!--
+LA SEGUENTE PAGINA VISUALIZZA UN BOTTONE RADIO PER OGNI OPZIONE DELLA DOMANDA
+IL VALORE DEL BOTTONE RADIO E' ASSOCIATO ALLA ID DELLA QUESTION
+il name="choice" pr l'input, sta  a indicare che quando qualcuno seleziona il
+radio botton e ne fa il submit del form, invierà un richiesta POST
+con choice=#, con # id della choice selezionata (questo è il concetto base dell'HTML)
+
+con form action=" url 'polls:vote' question.id  method="post" metto POST perchè
+la submit di questa azione altera i dati all'interno del model server-side.
+QUINDI OGNI VOLTA CHE CREO UNA FORM CHE ALTERA I DATI  PER SEMPRE SEMPRE METODO POST
+questa è buona pratica in generale
+
+forloop.counter indica quante volte il tag for ha attraversato il suo ciclo
+
+Poiché stiamo creando un modulo POST (che può avere l'effetto di modificare i dati),
+dobbiamo preoccuparci dei falsi delle richieste tra siti. Per fortuna, non devi
+preoccuparti troppo, perché Django ha un sistema utile per proteggerti.
+In breve, tutti i moduli POST destinati agli URL interni devono utilizzare il tag
+modello  csrf_token.
+
+
+-->
 <body>
     <h1>{{ question.question_text }}</h1>
-    <ul>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
     {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }}</li>
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
     {% endfor %}
-    </ul>
+    <input type="submit" value="Vote">
+    </form>
 </body>
 </html>
